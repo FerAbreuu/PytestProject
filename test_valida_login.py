@@ -1,0 +1,17 @@
+from valida import *
+def test_usuario():
+    assert usuario("irruan") =="f"
+    assert usuario("Irruan") =="c"
+    assert senha("irruan") =="f"
+    assert senha("Irruan") =="f"
+    assert senha("Ieeeeeeeerruan1") =="f"
+    assert senha("@@@@@@@@@@@") =="f"
+    assert senha("222222222222") =="f"
+    assert senha("irruan1") =="f"
+    assert senha("irru uuuuuuuan1") =="f"
+    assert senha("irruan1") =="f"
+    assert senha("Ieeeeeeeerruan1") =="f"
+    assert senha("Irruan1@2222") =="c"
+    assert limite("@@@@@@@@@@@@@") =="c"
+    assert limite("irruan11111111") =="c"
+    assert senha("Irruan1@2222sdddsdsdskjdskdjskdjskjdskjdskjdskjdskdjskjdskdjksjdsdsds") =="f"
