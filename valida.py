@@ -1,43 +1,17 @@
 def senha(senha):
-    if " " in senha:
-        return("f")
-    elif senha.islower():
-        return("f")
-    else:
-        if senha.isspace():
-            return("f")
-        else:
-            if senha.isalpha():
-                return("f")
-            elif senha.isdecimal():
-                return("f")
-            elif senha.isalnum():
-                return("f")
-            else:
-                if len(senha) < 10 or len(senha)> 30:
-                    return("f")
-                else:
-                    string=list(senha)
-                    if any(char.isdigit() for char in string):
-                        return("c")
-                    else:
-                        return("f")
+    if len(senha) < 10 or len(senha) > 30:
+        return False
+    if " " in senha or senha.islower() or senha.isspace() or senha.isalpha() or senha.isdecimal() or senha.isalnum():
+        return False
+    if any(char.isdigit() for char in senha):
+        return "Correto!"
+    return False
+
 def usuario(usuario):
-    if len(usuario) > 30 or len(usuario)< 4:
-        return("f")
-    else:
-        if usuario.isspace():
-            return("f")
-        else:
-            if usuario[0].isupper():
-                if usuario.isalnum():
-                    return("c")
-                else:
-                    return("f")
-            else:
-                return("f")
+    if len(usuario) > 30 or len(usuario) < 4 or usuario.isspace() or not usuario[0].isupper() or not usuario.isalnum():
+        return False
+    return "Correto!"
+
 def limite(mensagem):
-    if len(mensagem)> 70:
-        return("f")
-    else:
-        return("c")
+    return len(mensagem) <= 70
+
